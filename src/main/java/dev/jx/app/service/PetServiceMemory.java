@@ -1,14 +1,16 @@
-package dev.jx.app.repository;
+package dev.jx.app.service;
 
 import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.Profile;
 import dev.jx.app.entity.Pet;
 
-@Repository
-public class PetRepositoryImpl implements PetRepository {
+@Service
+@Profile("development")
+public class PetServiceMemory implements PetService {
 
     private static final Map<Integer, Pet> db = new TreeMap<>();
 
@@ -33,6 +35,11 @@ public class PetRepositoryImpl implements PetRepository {
     @Override
     public Pet findById(Integer id) {
         return db.get(id);
+    }
+
+    @Override
+    public Pet findByName(String name) {
+        return db.values().stream().filter((Pet pet) -> pet.getName().equals(name)).findFirst().orElse(null);
     }
 
     @Override

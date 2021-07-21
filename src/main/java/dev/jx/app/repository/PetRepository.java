@@ -1,18 +1,11 @@
 package dev.jx.app.repository;
 
-import java.util.Collection;
-
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import dev.jx.app.entity.Pet;
 
-public interface PetRepository {
+public interface PetRepository extends JpaRepository<Pet, Integer> {
 
-    public Collection<Pet> findAll();
-
-    public Pet findById(Integer id);
-
-    public void insert(Pet object);
-
-    public void update(Pet object);
-
-    public void deleteById(Integer id);
+    @Query(value = "SELECT * FROM pets p WHERE p.pet_name = ?1", nativeQuery = true)
+    Pet findByName(String name);
 }

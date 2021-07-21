@@ -6,13 +6,15 @@ import java.util.Collection;
 
 public interface PetService {
 
-    public Collection<Pet> findAll();
+    Collection<Pet> findAll();
 
-    public Pet findById(Integer id);
+    Pet findById(Integer id);
 
-    public void insert(Pet object);
+    Pet findByName(String name);
 
-    public void update(Pet object);
+    void insert(Pet object);
 
-    public void deleteById(Integer id);
+    void update(Pet object);
+
+    void deleteById(Integer id);
 }

@@ -15,7 +15,7 @@ public class Pet implements Serializable {
     @Column(name = "pet_age")
     private Integer age;
 
-    @Column(name = "pet_name")
+    @Column(name = "pet_name", nullable = false, unique = true)
     private String name;
 
     @Column(name = "pet_animal")

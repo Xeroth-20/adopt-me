@@ -24,7 +24,7 @@
                 </div>
             </nav>
             <main class="container py-5">
-                <div class="top">
+                <header>
                     <div class="row">
                         <div class="col">
                             <h1>Pets</h1>
@@ -33,7 +33,7 @@
                             <a class="btn btn-primary" href="<c:url value="/pets/register"/>">Register pet</a>
                         </div>
                     </div>
-                </div>
+                </header>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -60,7 +60,7 @@
                                         <td>
                                             <div class="form-row">
                                                 <div class="col-auto">
-                                                    <a class="btn btn-primary" href="<c:url value="/pets/${pet.id}"/>">Detail</a>
+                                                    <a class="btn btn-primary" href="<c:url value="/pets/${pet.name}"/>">Detail</a>
                                                 </div>
                                                 <div class="col-auto">
                                                     <a class="btn btn-success" href="<c:url value="/pets/${pet.id}/edit"/>">Edit</a>
