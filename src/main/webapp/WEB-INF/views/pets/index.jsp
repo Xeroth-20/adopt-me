@@ -42,7 +42,7 @@
                             <th scope="col">Animal</th>
                             <th scope="col">Breed</th>
                             <th scope="col">Age</th>
-                            <th scope="col">City</th>
+                            <th scope="col">Available adoption</th>
                             <th scope="col">Options</th>
                         </tr>
                     </thead>
@@ -56,7 +56,7 @@
                                         <td>${pet.animal}</td>
                                         <td>${pet.breed}</td>
                                         <td>${pet.age}</td>
-                                        <td>${pet.city}</td>
+                                        <td>${pet.availableAdoption ? "Yes" : "No"}</td>
                                         <td>
                                             <div class="form-row">
                                                 <div class="col-auto">

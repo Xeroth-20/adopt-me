@@ -1,7 +1,10 @@
 package dev.jx.app.entity;
 
+import java.time.LocalDate;
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "pets")
@@ -12,11 +15,15 @@ public class Pet implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "pet_age")
-    private Integer age;
+    @OneToOne
+    @JoinColumn(name = "img_id", referencedColumnName = "img_id", unique = true)
+    private Image image;
 
     @Column(name = "pet_name", nullable = false, unique = true)
     private String name;
+
+    @Column(name = "pet_age")
+    private Integer age;
 
     @Column(name = "pet_animal")
     private String animal;
@@ -24,23 +31,24 @@ public class Pet implements Serializable {
     @Column(name = "pet_breed")
     private String breed;
 
-    @Column(name = "pet_city")
-    private String city;
-
     @Column(name = "pet_available_adoption")
     private Boolean availableAdoption;
+
+    @Column(name = "pet_registration_date")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd")
+    private LocalDate registrationDate;
 
     public Pet() {
     }
 
-    public Pet(Integer id, Integer age, String name, String animal, String breed, String city, Boolean availableAdoption) {
+    public Pet(Integer id, String name, Integer age, String animal, String breed, Boolean availableAdoption, LocalDate registrationDate) {
         this.id = id;
-        this.age = age;
         this.name = name;
+        this.age = age;
         this.animal = animal;
         this.breed = breed;
-        this.city = city;
         this.availableAdoption = availableAdoption;
+        this.registrationDate = registrationDate;
     }
 
     public Integer getId() {
@@ -51,12 +59,12 @@ public class Pet implements Serializable {
         this.id = id;
     }
 
-    public Integer getAge() {
-        return age;
+    public Image getImage() {
+        return image;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     public String getName() {
@@ -65,6 +73,14 @@ public class Pet implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getAnimal() {
@@ -83,19 +99,19 @@ public class Pet implements Serializable {
         this.breed = breed;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public Boolean getAvailableAdoption() {
         return availableAdoption;
     }
 
     public void setAvailableAdoption(Boolean availableAdoption) {
         this.availableAdoption = availableAdoption;
+    }
+
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
     }
 }

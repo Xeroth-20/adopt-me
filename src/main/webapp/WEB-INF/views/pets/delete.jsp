@@ -48,8 +48,9 @@
                                         <button class="btn btn-block btn-primary" type="submit">Delete</button>
                                     </div>
                                     <div class="col-auto">
-                                        <a class="btn btn-block btn-outline-info" href="<c:url value="/pets"/>">Go
-                                            back</a>
+                                        <a class="btn btn-block btn-outline-info" href="<c:url value="/pets"/>">
+                                            Go back
+                                        </a>
                                     </div>
                                 </div>
                             </div>

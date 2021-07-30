@@ -1,5 +1,6 @@
 package dev.jx.app.service;
 
+import java.time.LocalDate;
 import java.util.Collection;
 
 import org.springframework.stereotype.Service;
@@ -36,14 +37,15 @@ public class PetServiceImpl implements PetService {
 
     @Override
     @Transactional
-    public void insert(Pet object) {
-        this.petRepository.save(object);
+    public void insert(Pet pet) {
+        pet.setRegistrationDate(LocalDate.now());
+        this.petRepository.save(pet);
     }
 
     @Override
     @Transactional
-    public void update(Pet object) {
-        this.petRepository.save(object);
+    public void update(Pet pet) {
+        this.petRepository.save(pet);
     }
 
     @Override

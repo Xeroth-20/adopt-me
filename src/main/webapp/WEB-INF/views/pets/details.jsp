@@ -62,14 +62,14 @@
                         </div>
                         <div class="col-auto">
                             <div class="info-item">
-                                <small class="text-muted">City</small>
-                                <p>${pet.city}</p>
+                                <small class="text-muted">Available adoption</small>
+                                <p>${pet.availableAdoption ? "Yes" : "No"}</p>
                             </div>
                         </div>
                         <div class="col-auto">
                             <div class="info-item">
-                                <small class="text-muted">Available adoption</small>
-                                <p>${pet.availableAdoption ? "Yes" : "No"}</p>
+                                <small class="text-muted">Registration date</small>
+                                <p>${pet.registrationDate}</p>
                             </div>
                         </div>
                     </div>

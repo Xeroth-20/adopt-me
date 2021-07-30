@@ -3,6 +3,7 @@ package dev.jx.app.service;
 import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
+import java.time.LocalDate;
 
 import org.springframework.stereotype.Service;
 import org.springframework.context.annotation.Profile;
@@ -15,11 +16,11 @@ public class PetServiceMemory implements PetService {
     private static final Map<Integer, Pet> db = new TreeMap<>();
 
     static {
-        Pet pet1 = new Pet(1, 2, "Luna", "Dog", "Havanese", "Seattle", true);
-        Pet pet2 = new Pet(2, 1, "Olive", "Dog", "Boxer", "Utah", true);
-        Pet pet3 = new Pet(3, 3, "Sudo", "Dog", "Wheaten Terrier", "Denver", false);
-        Pet pet4 = new Pet(4, 2, "Lyda", "Rabbit", "American", "Springfield", true);
-        Pet pet5 = new Pet(5, 4, "Vera", "Cat", "Charteux", "Minneapolis", false);
+        Pet pet1 = new Pet(1, "Luna", 2, "Dog", "Havanese", true, LocalDate.of(2021, 7, 30));
+        Pet pet2 = new Pet(2, "Olive", 1, "Dog", "Boxer", true, LocalDate.of(2021, 7, 30));
+        Pet pet3 = new Pet(3, "Sudo", 3, "Dog", "Wheaten Terrier", false, LocalDate.of(2021, 7, 30));
+        Pet pet4 = new Pet(4, "Lyda", 2, "Rabbit", "American", true, LocalDate.of(2021, 7, 30));
+        Pet pet5 = new Pet(5, "Vera", 4, "Cat", "Charteux", false, LocalDate.of(2021, 7, 30));
         db.put(pet1.getId(), pet1);
         db.put(pet2.getId(), pet2);
         db.put(pet3.getId(), pet3);
@@ -43,14 +44,15 @@ public class PetServiceMemory implements PetService {
     }
 
     @Override
-    public void insert(Pet object) {
-        object.setId(db.size() + 1);
-        db.put(object.getId(), object);
+    public void insert(Pet pet) {
+        pet.setId(db.size() + 1);
+        pet.setRegistrationDate(LocalDate.now());
+        db.put(pet.getId(), pet);
     }
 
     @Override
-    public void update(Pet object) {
-        db.replace(object.getId(), object);
+    public void update(Pet pet) {
+        db.replace(pet.getId(), pet);
     }
 
     @Override

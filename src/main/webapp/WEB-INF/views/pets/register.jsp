@@ -54,15 +54,9 @@
                                 <form:input path="age" cssClass="form-control"/>
                             </div>
                             <div class="form-group">
-                                <form:label path="city">
-                                    City
-                                </form:label>
-                                <form:input path="city" cssClass="form-control"/>
-                            </div>
-                            <div class="form-group">
                                 <div class="form-check">
                                     <form:checkbox path="availableAdoption" cssClass="form-check-input"/>
-                                    <form:label path="availableAdoption" cssClass="form-check-label">
+                                    <form:label path="availableAdoption" for="availableAdoption1" cssClass="form-check-label">
                                         Available adoption
                                     </form:label>
                                 </div>
@@ -73,7 +67,9 @@
                                         <button class="btn btn-block btn-primary" type="submit">Register</button>
                                     </div>
                                     <div class="col-auto">
-                                        <a class="btn btn-block btn-outline-info" href="<c:url value="/pets"/>">Go back</a>
+                                        <a class="btn btn-block btn-outline-info" href="<c:url value="/pets"/>">
+                                            Go back
+                                        </a>
                                     </div>
                                 </div>
                             </div>

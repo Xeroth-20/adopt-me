@@ -12,9 +12,9 @@ public interface PetService {
 
     Pet findByName(String name);
 
-    void insert(Pet object);
+    void insert(Pet pet);
 
-    void update(Pet object);
+    void update(Pet pet);
 
     void deleteById(Integer id);
 }
