@@ -44,18 +44,6 @@
                         </div>
                         <div class="col-auto">
                             <div class="info-item">
-                                <small class="text-muted">Animal</small>
-                                <p>${pet.animal}</p>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="info-item">
-                                <small class="text-muted">Breed</small>
-                                <p>${pet.breed}</p>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="info-item">
                                 <small class="text-muted">Age</small>
                                 <p>${pet.age}</p>
                             </div>

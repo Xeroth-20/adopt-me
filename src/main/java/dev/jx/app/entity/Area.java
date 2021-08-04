@@ -4,21 +4,21 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "images")
-public class Image implements Serializable {
+@Table(name = "areas")
+public class Area implements Serializable {
 
     @Id
-    @Column(name = "img_id")
+    @Column(name = "are_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "img_name")
+    @Column(name = "are_name")
     private String name;
 
-    @Column(name = "img_data", columnDefinition = "longblob")
-    private byte[] data;
+    @Column(name = "are_square_meters")
+    private Double squareMeters;
 
-    public Image() {
+    public Area() {
     }
 
     public Integer getId() {
@@ -37,11 +37,11 @@ public class Image implements Serializable {
         this.name = name;
     }
 
-    public byte[] getData() {
-        return data;
+    public Double getSquareMeters() {
+        return squareMeters;
     }
 
-    public void setData(byte[] data) {
-        this.data = data;
+    public void setSquareMeters(Double squareMeters) {
+        this.squareMeters = squareMeters;
     }
 }

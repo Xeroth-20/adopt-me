@@ -39,8 +39,6 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Animal</th>
-                            <th scope="col">Breed</th>
                             <th scope="col">Age</th>
                             <th scope="col">Available adoption</th>
                             <th scope="col">Options</th>
@@ -53,8 +51,6 @@
                                     <tr>
                                         <td>${pet.id}</td>
                                         <td>${pet.name}</td>
-                                        <td>${pet.animal}</td>
-                                        <td>${pet.breed}</td>
                                         <td>${pet.age}</td>
                                         <td>${pet.availableAdoption ? "Yes" : "No"}</td>
                                         <td>
@@ -75,7 +71,7 @@
                             </c:when>
                             <c:otherwise>
                                 <tr>
-                                    <td colspan="7">No available logs.</td>
+                                    <td colspan="5">No available logs.</td>
                                 </tr>
                             </c:otherwise>
                         </c:choose>

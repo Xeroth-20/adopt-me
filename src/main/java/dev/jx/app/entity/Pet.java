@@ -19,17 +19,18 @@ public class Pet implements Serializable {
     @JoinColumn(name = "img_id", referencedColumnName = "img_id", unique = true)
     private Image image;
 
+    @ManyToOne
+    @JoinColumn(name = "ani_id", referencedColumnName = "ani_id")
+    private Animal animal;
+
+    @OneToOne(mappedBy = "pet")
+    private Adoption adoption;
+
     @Column(name = "pet_name", nullable = false, unique = true)
     private String name;
 
     @Column(name = "pet_age")
     private Integer age;
-
-    @Column(name = "pet_animal")
-    private String animal;
-
-    @Column(name = "pet_breed")
-    private String breed;
 
     @Column(name = "pet_available_adoption")
     private Boolean availableAdoption;
@@ -41,12 +42,10 @@ public class Pet implements Serializable {
     public Pet() {
     }
 
-    public Pet(Integer id, String name, Integer age, String animal, String breed, Boolean availableAdoption, LocalDate registrationDate) {
+    public Pet(Integer id, String name, Integer age, Boolean availableAdoption, LocalDate registrationDate) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.animal = animal;
-        this.breed = breed;
         this.availableAdoption = availableAdoption;
         this.registrationDate = registrationDate;
     }
@@ -67,6 +66,22 @@ public class Pet implements Serializable {
         this.image = image;
     }
 
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
+
+    public Adoption getAdoption() {
+        return adoption;
+    }
+
+    public void setAdoption(Adoption adoption) {
+        this.adoption = adoption;
+    }
+
     public String getName() {
         return name;
     }
@@ -81,22 +96,6 @@ public class Pet implements Serializable {
 
     public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public String getAnimal() {
-        return animal;
-    }
-
-    public void setAnimal(String animal) {
-        this.animal = animal;
-    }
-
-    public String getBreed() {
-        return breed;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
     }
 
     public Boolean getAvailableAdoption() {

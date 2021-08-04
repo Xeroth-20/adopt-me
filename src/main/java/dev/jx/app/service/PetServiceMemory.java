@@ -16,11 +16,11 @@ public class PetServiceMemory implements PetService {
     private static final Map<Integer, Pet> db = new TreeMap<>();
 
     static {
-        Pet pet1 = new Pet(1, "Luna", 2, "Dog", "Havanese", true, LocalDate.of(2021, 7, 30));
-        Pet pet2 = new Pet(2, "Olive", 1, "Dog", "Boxer", true, LocalDate.of(2021, 7, 30));
-        Pet pet3 = new Pet(3, "Sudo", 3, "Dog", "Wheaten Terrier", false, LocalDate.of(2021, 7, 30));
-        Pet pet4 = new Pet(4, "Lyda", 2, "Rabbit", "American", true, LocalDate.of(2021, 7, 30));
-        Pet pet5 = new Pet(5, "Vera", 4, "Cat", "Charteux", false, LocalDate.of(2021, 7, 30));
+        Pet pet1 = new Pet(1, "Luna", 2, true, LocalDate.of(2021, 7, 30));
+        Pet pet2 = new Pet(2, "Olive", 1, true, LocalDate.of(2021, 7, 30));
+        Pet pet3 = new Pet(3, "Sudo", 3, false, LocalDate.of(2021, 7, 30));
+        Pet pet4 = new Pet(4, "Lyda", 2, true, LocalDate.of(2021, 7, 30));
+        Pet pet5 = new Pet(5, "Vera", 4, false, LocalDate.of(2021, 7, 30));
         db.put(pet1.getId(), pet1);
         db.put(pet2.getId(), pet2);
         db.put(pet3.getId(), pet3);

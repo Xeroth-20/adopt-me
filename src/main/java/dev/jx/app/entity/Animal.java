@@ -1,24 +1,25 @@
 package dev.jx.app.entity;
 
+import java.util.Collection;
 import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "images")
-public class Image implements Serializable {
+@Table(name = "animals")
+public class Animal implements Serializable {
 
     @Id
-    @Column(name = "img_id")
+    @Column(name = "ani_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "img_name")
+    @OneToMany(mappedBy = "animal")
+    private Collection<Pet> pets;
+
+    @Column(name = "ani_name")
     private String name;
 
-    @Column(name = "img_data", columnDefinition = "longblob")
-    private byte[] data;
-
-    public Image() {
+    public Animal() {
     }
 
     public Integer getId() {
@@ -35,13 +36,5 @@ public class Image implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public byte[] getData() {
-        return data;
-    }
-
-    public void setData(byte[] data) {
-        this.data = data;
     }
 }

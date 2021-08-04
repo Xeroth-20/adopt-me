@@ -40,18 +40,6 @@
                                 <form:input path="name" cssClass="form-control"/>
                             </div>
                             <div class="form-group">
-                                <form:label path="animal">
-                                    Animal
-                                </form:label>
-                                <form:input path="animal" cssClass="form-control"/>
-                            </div>
-                            <div class="form-group">
-                                <form:label path="breed">
-                                    Breed
-                                </form:label>
-                                <form:input path="breed" cssClass="form-control"/>
-                            </div>
-                            <div class="form-group">
                                 <form:label path="age">
                                     Age
                                 </form:label>
