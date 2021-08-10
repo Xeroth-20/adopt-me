@@ -16,7 +16,7 @@ public class Pet implements Serializable {
     private Integer id;
 
     @OneToOne
-    @JoinColumn(name = "img_id", referencedColumnName = "img_id", unique = true)
+    @JoinColumn(name = "img_id", referencedColumnName = "img_id")
     private Image image;
 
     @ManyToOne

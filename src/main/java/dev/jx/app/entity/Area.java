@@ -1,5 +1,7 @@
 package dev.jx.app.entity;
 
+import java.util.Set;
+import java.util.HashSet;
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -11,6 +13,14 @@ public class Area implements Serializable {
     @Column(name = "are_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @ManyToMany
+    @JoinTable(
+            name = "area_animals",
+            joinColumns = @JoinColumn(name = "are_id", referencedColumnName = "are_id"),
+            inverseJoinColumns = @JoinColumn(name = "ani_id", referencedColumnName = "ani_id")
+    )
+    private Set<Animal> animals = new HashSet<>();
 
     @Column(name = "are_name")
     private String name;
@@ -27,6 +37,14 @@ public class Area implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<Animal> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(Set<Animal> animals) {
+        this.animals = animals;
     }
 
     public String getName() {

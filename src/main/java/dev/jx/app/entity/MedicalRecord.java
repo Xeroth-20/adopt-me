@@ -2,16 +2,18 @@ package dev.jx.app.entity;
 
 import java.time.LocalDate;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "adoptions")
-public class Adoption implements Serializable {
+@Table(name = "medical_records")
+public class MedicalRecord implements Serializable {
 
     @Id
-    @Column(name = "ado_id")
+    @Column(name = "mer_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -19,15 +21,14 @@ public class Adoption implements Serializable {
     @JoinColumn(name = "pet_id", referencedColumnName = "pet_id")
     private Pet pet;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "own_id", referencedColumnName = "own_id")
-    private Owner owner;
+    @OneToMany(mappedBy = "medicalRecord")
+    private Set<Dosage> dosages = new HashSet<>();
 
-    @Column(name = "ado_adoption_date")
+    @Column(name = "mer_creation_date")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd")
-    private LocalDate adoptionDate;
+    private LocalDate creationDate;
 
-    public Adoption() {
+    public MedicalRecord() {
     }
 
     public Integer getId() {
@@ -46,19 +47,19 @@ public class Adoption implements Serializable {
         this.pet = pet;
     }
 
-    public Owner getOwner() {
-        return owner;
+    public Set<Dosage> getDosages() {
+        return dosages;
     }
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
+    public void setDosages(Set<Dosage> dosages) {
+        this.dosages = dosages;
     }
 
-    public LocalDate getAdoptionDate() {
-        return adoptionDate;
+    public LocalDate getCreationDate() {
+        return creationDate;
     }
 
-    public void setAdoptionDate(LocalDate adoptionDate) {
-        this.adoptionDate = adoptionDate;
+    public void setCreationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
     }
 }

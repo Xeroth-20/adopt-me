@@ -1,6 +1,7 @@
 package dev.jx.app.entity;
 
 import java.util.Collection;
+import java.util.ArrayList;
 import java.time.LocalDate;
 import java.io.Serializable;
 import javax.persistence.*;
@@ -17,7 +18,7 @@ public class Owner implements Serializable {
     private Integer id;
 
     @OneToMany(mappedBy = "owner")
-    private Collection<Adoption> adoptions;
+    private Collection<Adoption> adoptions = new ArrayList<>();
 
     @Column(name = "own_firstname")
     private String firstname;

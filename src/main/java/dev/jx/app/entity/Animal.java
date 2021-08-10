@@ -1,6 +1,9 @@
 package dev.jx.app.entity;
 
 import java.util.Collection;
+import java.util.Set;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -14,7 +17,10 @@ public class Animal implements Serializable {
     private Integer id;
 
     @OneToMany(mappedBy = "animal")
-    private Collection<Pet> pets;
+    private Collection<Pet> pets = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "animals")
+    private Set<Area> areas = new HashSet<>();
 
     @Column(name = "ani_name")
     private String name;
@@ -28,6 +34,22 @@ public class Animal implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Collection<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(Collection<Pet> pets) {
+        this.pets = pets;
+    }
+
+    public Set<Area> getAreas() {
+        return areas;
+    }
+
+    public void setAreas(Set<Area> areas) {
+        this.areas = areas;
     }
 
     public String getName() {
