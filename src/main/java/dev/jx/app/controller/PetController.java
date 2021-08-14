@@ -23,12 +23,6 @@ public class PetController {
         return "/pets/index";
     }
 
-    @RequestMapping(value = "/pets/{name}", method = RequestMethod.GET)
-    public String getDetails(@PathVariable String name, Model model) {
-        model.addAttribute("pet", petService.findByName(name));
-        return "/pets/details";
-    }
-
     @RequestMapping(value = "/pets/register", method = RequestMethod.GET)
     public String getRegister(Model model) {
         model.addAttribute("pet", new Pet());
@@ -54,13 +48,13 @@ public class PetController {
     }
 
     @RequestMapping(value = "/pets/{id}/delete", method = RequestMethod.GET)
-    public String getDeletePet(@PathVariable Integer id, Model model) {
+    public String getDelete(@PathVariable Integer id, Model model) {
         model.addAttribute("pet", this.petService.findById(id));
         return "/pets/delete";
     }
 
     @RequestMapping(value = "/pets/{id}/delete", method = RequestMethod.POST)
-    public String postDeletePet(Pet pet) {
+    public String postDelete(Pet pet) {
         this.petService.deleteById(pet.getId());
         return "redirect:/pets";
     }

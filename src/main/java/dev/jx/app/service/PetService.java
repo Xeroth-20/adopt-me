@@ -1,8 +1,8 @@
 package dev.jx.app.service;
 
-import dev.jx.app.entity.Pet;
-
 import java.util.Collection;
+
+import dev.jx.app.entity.Pet;
 
 public interface PetService {
 
