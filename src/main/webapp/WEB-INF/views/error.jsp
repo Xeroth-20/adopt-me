@@ -17,42 +17,51 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<c:url value="/"/>">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<c:url value="/pets"/>">Pets</a>
-                        </li>
                     </ul>
                 </div>
             </nav>
-            <main class="container py-5">
-                <header class="mb-3">
-                    <h1>An error has occurred</h1>
-                    <a href="<c:url value="/"/>">Go to home</a>
-                </header>
-                <div class="overflow-auto">
-                    <table class="table table-bordered">
-                        <tbody>
-                            <tr>
-                                <th class="text-nowrap" scope="row">Datetime</th>
-                                <td>${timestamp}</td>
-                            </tr>
-                            <tr>
-                                <th class="text-nowrap" scope="row">Error</th>
-                                <td>${error}</td>
-                            </tr>
-                            <tr>
-                                <th class="text-nowrap" scope="row">Status code</th>
-                                <td>${status}</td>
-                            </tr>
-                            <tr>
-                                <th class="text-nowrap" scope="row">Message</th>
-                                <td>${message}</td>
-                            </tr>
-                            <tr>
-                                <th class="text-nowrap" scope="row">Exception</th>
-                                <td>${exception}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <main class="container py-4">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="h3 text-primary">Modules</div>
+                        <div class="list-group">
+                            <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action">Pets</a>
+                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
+                            <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
+                            <a href="<c:url value="/images"/>" class="list-group-item list-group-item-action">Images</a>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <header class="mb-3">
+                            <h3>An error has occurred</h3>
+                        </header>
+                        <div class="overflow-auto">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th class="text-nowrap" scope="row">Datetime</th>
+                                        <td>${timestamp}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-nowrap" scope="row">Error</th>
+                                        <td>${error}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-nowrap" scope="row">Status code</th>
+                                        <td>${status}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-nowrap" scope="row">Message</th>
+                                        <td>${message}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-nowrap" scope="row">Exception</th>
+                                        <td>${exception}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>

@@ -7,7 +7,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"/>
-        <title>Delete Pet | Adopt Me</title>
+        <title>Delete Animal | Adopt Me</title>
     </head>
     <body>
         <div class="root">
@@ -27,7 +27,7 @@
                         <div class="h3">Modules</div>
                         <div class="list-group">
                             <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action">Pets</a>
-                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
+                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action active">Animals</a>
                             <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
                             <a href="<c:url value="/images"/>" class="list-group-item list-group-item-action">Images</a>
                         </div>
@@ -35,8 +35,8 @@
                     <div class="col-9">
                         <div class="row">
                             <div class="col-4">
-                                <h3>Delete pet</h3>
-                                <form:form modelAttribute="pet" method="post">
+                                <h3>Delete animal</h3>
+                                <form:form modelAttribute="animal" method="post">
                                     <div class="form-group d-none">
                                         <form:label path="id">ID</form:label>
                                         <form:input path="id" readonly="true"/>
@@ -48,7 +48,7 @@
                                         <form:input path="name" cssClass="form-control" disabled="true"/>
                                     </div>
                                     <div class="form-group">
-                                        <p class="text-danger">Are you sure to delete this pet?</p>
+                                        <p class="text-danger">Are you sure to delete this animal?</p>
                                     </div>
                                     <div class="form-group">
                                         <div class="form-row">
@@ -56,7 +56,7 @@
                                                 <button class="btn btn-block btn-primary" type="submit">Delete</button>
                                             </div>
                                             <div class="col-auto">
-                                                <a class="btn btn-block btn-outline-info" href="<c:url value="/pets"/>">
+                                                <a class="btn btn-block btn-outline-info" href="<c:url value="/animals"/>">
                                                     Go back
                                                 </a>
                                             </div>

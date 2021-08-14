@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import dev.jx.app.entity.Animal;
 import dev.jx.app.repository.AnimalRepository;
 
-@Services
+@Service
 public class AnimalServiceImpl implements AnimalService {
 
 	@Autowired

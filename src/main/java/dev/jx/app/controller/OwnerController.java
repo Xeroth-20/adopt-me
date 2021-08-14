@@ -52,7 +52,7 @@ public class OwnerController {
 	@RequestMapping(value = "/owners/{id}/delete", method = RequestMethod.GET)
 	public String getDelete(@PathVariable Integer id, Model model) {
 		model.addAttribute("owner", this.ownerService.findById(id));
-		return "/owner/delete";
+		return "/owners/delete";
 	}
 
 	@RequestMapping(value = "/owners/{id}/delete", method = RequestMethod.POST)

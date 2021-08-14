@@ -52,7 +52,7 @@ public class AnimalController {
 	@RequestMapping(value = "/animals/{id}/delete", method = RequestMethod.GET)
 	public String getDelete(@PathVariable Integer id, Model model) {
 		model.addAttribute("animal", this.animalService.findById(id));
-		return "/animal/delete";
+		return "/animals/delete";
 	}
 
 	@RequestMapping(value = "/animals/{id}/delete", method = RequestMethod.POST)

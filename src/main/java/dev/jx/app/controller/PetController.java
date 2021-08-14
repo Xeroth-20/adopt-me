@@ -23,6 +23,12 @@ public class PetController {
         return "/pets/index";
     }
 
+    @RequestMapping(value = "/pets/{name}", method = RequestMethod.GET)
+    public String getDetails(@PathVariable String name, Model model) {
+        model.addAttribute("pet", this.petService.findByName(name));
+        return "/pets/details";
+    }
+
     @RequestMapping(value = "/pets/register", method = RequestMethod.GET)
     public String getRegister(Model model) {
         model.addAttribute("pet", new Pet());

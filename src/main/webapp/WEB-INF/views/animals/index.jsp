@@ -6,7 +6,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"/>
-        <title>Pets | Adopt me</title>
+        <title>Animals | Adopt me</title>
     </head>
     <body>
         <div class="root">
@@ -25,8 +25,8 @@
                     <div class="col-3">
                         <div class="h3 text-muted">Modules</div>
                         <div class="list-group">
-                            <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action active">Pets</a>
-                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
+                            <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action">Pets</a>
+                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action active">Animals</a>
                             <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
                             <a href="<c:url value="/images"/>" class="list-group-item list-group-item-action">Images</a>
                         </div>
@@ -35,10 +35,11 @@
                         <header>
                             <div class="row">
                                 <div class="col">
-                                    <h3>Pets</h3>
+                                    <h3>Animals</h3>
                                 </div>
                                 <div class="col-auto">
-                                    <a class="btn btn-primary" href="<c:url value="/pets/register"/>">Register pet</a>
+                                    <a class="btn btn-primary" href="<c:url value="/animals/register"/>">Register
+                                        animal</a>
                                 </div>
                             </div>
                         </header>
@@ -47,30 +48,23 @@
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Age</th>
-                                    <th scope="col">Available adoption</th>
                                     <th scope="col">Options</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <c:choose>
-                                    <c:when test="${pets.size() > 0}">
-                                        <c:forEach var="pet" items="${pets}">
+                                    <c:when test="${animals.size() > 0}">
+                                        <c:forEach var="animal" items="${animals}">
                                             <tr>
-                                                <td>${pet.id}</td>
-                                                <td>${pet.name}</td>
-                                                <td>${pet.age}</td>
-                                                <td>${pet.availableAdoption ? "Yes" : "No"}</td>
+                                                <td>${animal.id}</td>
+                                                <td>${animal.name}</td>
                                                 <td>
                                                     <div class="form-row">
                                                         <div class="col-auto">
-                                                            <a class="btn btn-primary" href="<c:url value="/pets/${pet.name}"/>">Details</a>
+                                                            <a class="btn btn-success" href="<c:url value="/animals/${animal.id}/edit"/>">Edit</a>
                                                         </div>
                                                         <div class="col-auto">
-                                                            <a class="btn btn-success" href="<c:url value="/pets/${pet.id}/edit"/>">Edit</a>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <a class="btn btn-outline-danger" href="<c:url value="/pets/${pet.id}/delete"/>">Delete</a>
+                                                            <a class="btn btn-outline-danger" href="<c:url value="/animals/${animal.id}/delete"/>">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -79,7 +73,7 @@
                                     </c:when>
                                     <c:otherwise>
                                         <tr>
-                                            <td colspan="5">No available logs.</td>
+                                            <td colspan="3">No available logs.</td>
                                         </tr>
                                     </c:otherwise>
                                 </c:choose>

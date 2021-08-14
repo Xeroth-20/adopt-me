@@ -15,49 +15,58 @@
                     <a class="navbar-brand" href="<c:url value="/"/>">Adopt Me</a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="<c:url value="/"/>">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<c:url value="/pets"/>">Pets</a>
+                            <a class="nav-link active" href="<c:url value="/"/>">Home</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <main class="container py-5">
-                <header>
-                    <small class="text-muted">Pet</small>
-                    <h1 class="text-primary">${pet.name}</h1>
-                </header>
-                <div class="info">
-                    <div class="row">
-                        <div class="col-auto">
-                            <div class="info-item">
-                                    <small class="text-muted">ID</small>
-                                    <p>${pet.id}</p>
-                            </div>
+            <main class="container py-4">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="h3">Modules</div>
+                        <div class="list-group">
+                            <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action active">Pets</a>
+                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
+                            <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
+                            <a href="<c:url value="/images"/>" class="list-group-item list-group-item-action">Images</a>
                         </div>
-                        <div class="col-auto">
-                            <div class="info-item">
-                                <small class="text-muted">Name</small>
-                                <p>${pet.name}</p>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="info-item">
-                                <small class="text-muted">Age</small>
-                                <p>${pet.age}</p>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="info-item">
-                                <small class="text-muted">Available adoption</small>
-                                <p>${pet.availableAdoption ? "Yes" : "No"}</p>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="info-item">
-                                <small class="text-muted">Registration date</small>
-                                <p>${pet.registrationDate}</p>
+                    </div>
+                    <div class="col-9">
+                        <header>
+                            <h3 class="text-primary">Pet</h3>
+                        </header>
+                        <div class="info">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="info-item">
+                                        <small class="text-muted">ID</small>
+                                        <p>${pet.id}</p>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="info-item">
+                                        <small class="text-muted">Name</small>
+                                        <p>${pet.name}</p>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="info-item">
+                                        <small class="text-muted">Age</small>
+                                        <p>${pet.age}</p>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="info-item">
+                                        <small class="text-muted">Available adoption</small>
+                                        <p>${pet.availableAdoption ? "Yes" : "No"}</p>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="info-item">
+                                        <small class="text-muted">Registration date</small>
+                                        <p>${pet.registrationDate}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

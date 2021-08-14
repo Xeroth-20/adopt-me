@@ -7,7 +7,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"/>
-        <title>Register Pet | Adopt Me</title>
+        <title>Register Animal | Adopt Me</title>
     </head>
     <body>
         <div class="root">
@@ -26,8 +26,8 @@
                     <div class="col-3">
                         <div class="h3">Modules</div>
                         <div class="list-group">
-                            <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action active">Pets</a>
-                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
+                            <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action">Pets</a>
+                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action active">Animals</a>
                             <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
                             <a href="<c:url value="/images"/>" class="list-group-item list-group-item-action">Images</a>
                         </div>
@@ -35,8 +35,8 @@
                     <div class="col-9">
                         <div class="row">
                             <div class="col-4">
-                                <h3>Register pet</h3>
-                                <form:form modelAttribute="pet" method="post">
+                                <h3>Register animal</h3>
+                                <form:form modelAttribute="animal" method="post">
                                     <div class="form-group">
                                         <form:label path="name">
                                             Name
@@ -44,26 +44,12 @@
                                         <form:input path="name" cssClass="form-control"/>
                                     </div>
                                     <div class="form-group">
-                                        <form:label path="age">
-                                            Age
-                                        </form:label>
-                                        <form:input path="age" cssClass="form-control"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="form-check">
-                                            <form:checkbox path="availableAdoption" cssClass="form-check-input"/>
-                                            <form:label path="availableAdoption" for="availableAdoption1" cssClass="form-check-label">
-                                                Available adoption
-                                            </form:label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
                                         <div class="form-row">
                                             <div class="col">
                                                 <button class="btn btn-block btn-primary" type="submit">Register</button>
                                             </div>
                                             <div class="col-auto">
-                                                <a class="btn btn-block btn-outline-info" href="<c:url value="/pets"/>">
+                                                <a class="btn btn-block btn-outline-info" href="<c:url value="/animals"/>">
                                                     Go back
                                                 </a>
                                             </div>

@@ -15,20 +15,25 @@
                     <a class="navbar-brand" href="<c:url value="/"/>">Adopt Me</a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="<c:url value="/"/>">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<c:url value="/pets"/>">Pets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<c:url value="/images"/>">Images</a>
+                            <a class="nav-link active" href="<c:url value="/"/>">Home</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <main class="container py-5">
-                <h1>Welcome to adopt me</h1>
-                <a href="<c:url value="/pets"/>">Go to pets</a>
+            <main class="container py-4">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="h3 text-muted">Modules</div>
+                        <div class="list-group">
+                            <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action">Pets</a>
+                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
+                            <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
+                            <a href="<c:url value="/images"/>" class="list-group-item list-group-item-action">Images</a>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                    </div>
+                </div>
             </main>
         </div>
     </body>
