@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrap.min.css"/>"/>
         <title>Error | Adopt me</title>
     </head>
     <body>
@@ -32,9 +32,7 @@
                         </div>
                     </div>
                     <div class="col-9">
-                        <header class="mb-3">
-                            <h3>An error has occurred</h3>
-                        </header>
+                        <h3>An error has occurred</h3>
                         <div class="overflow-auto">
                             <table class="table table-bordered">
                                 <tbody>
