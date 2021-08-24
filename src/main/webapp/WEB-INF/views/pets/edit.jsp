@@ -7,6 +7,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrap.min.css"/>"/>
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/styles.css"/>"/>
         <title>Edit Pet | Adopt Me</title>
     </head>
     <body>
@@ -48,10 +49,28 @@
                                         <form:input path="name" cssClass="form-control"/>
                                     </div>
                                     <div class="form-group">
+                                        <form:label path="animal.id">
+                                            Animal
+                                        </form:label>
+                                        <form:select path="animal.id" cssClass="form-control">
+                                            <form:option value="" label="--Select an animal--"/>
+                                            <form:options items="${animals}" itemValue="id" itemLabel="name"/>
+                                        </form:select>
+                                    </div>
+                                    <div class="form-group">
                                         <form:label path="age">
                                             Age
                                         </form:label>
                                         <form:input path="age" cssClass="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <form:label path="image.id">
+                                            Image
+                                        </form:label>
+                                        <form:select path="image.id" cssClass="form-control">
+                                            <form:option value="" label="--Select an image--" />
+                                            <form:options items="${images}" itemValue="id" itemLabel="name"/>
+                                        </form:select>
                                     </div>
                                     <div class="form-group">
                                         <div class="form-check">

@@ -4,18 +4,29 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.ui.Model;
 import dev.jx.app.entity.Pet;
 import dev.jx.app.service.PetService;
+import dev.jx.app.service.ImageService;
+import dev.jx.app.service.AnimalService;
 
 @Controller
 public class PetController {
 
     @Autowired
     private PetService petService;
+
+    @Autowired
+    @Qualifier("imageServiceImpl")
+    private ImageService imageService;
+
+    @Autowired
+    @Qualifier("animalServiceImpl")
+    private AnimalService animalService;
 
     @RequestMapping(value = "/pets", method = RequestMethod.GET)
     public String getIndex(Map<String, Object> map) {
@@ -30,8 +41,11 @@ public class PetController {
     }
 
     @RequestMapping(value = "/pets/register", method = RequestMethod.GET)
-    public String getRegister(Model model) {
+    public String getRegister(Model model, Map<String, Object> map) {
         model.addAttribute("pet", new Pet());
+        map.put("images", this.imageService.findAll());
+        map.put("animals", this.animalService.findAll());
+
         return "/pets/register";
     }
 
@@ -42,8 +56,11 @@ public class PetController {
     }
 
     @RequestMapping(value = "/pets/{id}/edit", method = RequestMethod.GET)
-    public String getEdit(@PathVariable Integer id, Model model) {
+    public String getEdit(@PathVariable Integer id, Model model, Map<String, Object> map) {
         model.addAttribute("pet", this.petService.findById(id));
+        map.put("images", this.imageService.findAll());
+        map.put("animals", this.animalService.findAll());
+        
         return "/pets/edit";
     }
 

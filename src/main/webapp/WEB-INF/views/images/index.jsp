@@ -6,6 +6,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrap.min.css"/>"/>
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/styles.css"/>"/>
         <title>Images | Adopt me</title>
     </head>
     <body>
@@ -15,7 +16,7 @@
                     <a class="navbar-brand" href="<c:url value="/"/>">Adopt Me</a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="<c:url value="/"/>">Home</a>
+                            <a class="nav-link" href="<c:url value="/"/>">Home</a>
                         </li>
                     </ul>
                 </div>
@@ -38,7 +39,8 @@
                                     <h3>Images</h3>
                                 </div>
                                 <div class="col-auto">
-                                    <a class="btn btn-primary" href="<c:url value="/images/register"/>">Register image</a>
+                                    <a class="btn btn-primary" href="<c:url value="/images/register"/>">Register
+                                        image</a>
                                 </div>
                             </div>
                         </header>
@@ -47,6 +49,8 @@
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Name</th>
+                                    <th scope="col">Thumbnail</th>
+                                    <th scope="col">Options</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,12 +60,25 @@
                                             <tr>
                                                 <td>${image.id}</td>
                                                 <td>${image.name}</td>
+                                                <td>
+                                                    <img class="img-thumbnail" src="${image.src}" alt="${image.name}" width="150"/>
+                                                </td>
+                                                <td>
+                                                    <div class="form-row">
+                                                        <div class="col-auto">
+                                                            <a class="btn btn-success" href="<c:url value="/images/${image.id}/edit"/>">Edit</a>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <a class="btn btn-outline-danger" href="<c:url value="/images/${image.id}/delete"/>">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         </c:forEach>
                                     </c:when>
                                     <c:otherwise>
                                         <tr>
-                                            <td colspan="2">No available logs.</td>
+                                            <td colspan="4">No available logs.</td>
                                         </tr>
                                     </c:otherwise>
                                 </c:choose>

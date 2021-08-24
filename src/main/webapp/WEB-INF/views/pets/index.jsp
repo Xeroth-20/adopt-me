@@ -6,6 +6,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrap.min.css"/>"/>
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/styles.css"/>"/>
         <title>Pets | Adopt me</title>
     </head>
     <body>
@@ -48,6 +49,7 @@
                                     <th scope="col">ID</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Age</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">Available adoption</th>
                                     <th scope="col">Options</th>
                                 </tr>
@@ -60,6 +62,9 @@
                                                 <td>${pet.id}</td>
                                                 <td>${pet.name}</td>
                                                 <td>${pet.age}</td>
+                                                <td>
+                                                    <img class="img-thumbnail" src="${pet.image.src}" alt="${pet.image.name}" width="150"/>
+                                                </td>
                                                 <td>${pet.availableAdoption ? "Yes" : "No"}</td>
                                                 <td>
                                                     <div class="form-row">
@@ -79,7 +84,7 @@
                                     </c:when>
                                     <c:otherwise>
                                         <tr>
-                                            <td colspan="5">No available logs.</td>
+                                            <td colspan="6">No available logs.</td>
                                         </tr>
                                     </c:otherwise>
                                 </c:choose>

@@ -1,5 +1,6 @@
 package dev.jx.app.entity;
 
+import java.util.Base64;
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -19,6 +20,12 @@ public class Image implements Serializable {
     private byte[] data;
 
     public Image() {
+    }
+
+    public String getSrc() {
+        return "data:image/" + name.substring(name.indexOf(".") + 1) +
+                ";charset=utf-8;base64," +
+                Base64.getEncoder().encodeToString(data);
     }
 
     public Integer getId() {

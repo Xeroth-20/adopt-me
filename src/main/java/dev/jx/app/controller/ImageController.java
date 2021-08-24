@@ -50,8 +50,11 @@ public class ImageController {
     }
 
     @RequestMapping(value = "/images/{id}/edit", method = RequestMethod.POST)
-    public String postEdit(Image image) {
+    public String postEdit(Image image, @RequestPart("file") MultipartFile file) throws IOException {
+        image.setName(file.getOriginalFilename());
+        image.setData(file.getBytes());
         this.imageService.update(image);
+
         return "redirect:/images";
     }
 

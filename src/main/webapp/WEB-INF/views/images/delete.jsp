@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrap.min.css"/>"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/styles.css"/>"/>
-        <title>Register Image | Adopt Me</title>
+        <title>Delete Image | Adopt Me</title>
     </head>
     <body>
         <div class="root">
@@ -36,15 +36,23 @@
                     <div class="col-9">
                         <div class="row">
                             <div class="col-4">
-                                <h3>Register image</h3>
+                                <h3>Delete image</h3>
                                 <form:form modelAttribute="image" method="post" enctype="multipart/form-data">
+                                    <div class="form-group d-none">
+                                        <form:label path="id">ID</form:label>
+                                        <form:input path="id" readonly="true"/>
+                                    </div>
                                     <div class="form-group">
-                                        <input class="form-control" name="file" type="file"/>
+                                        <form:label path="name">Name</form:label>
+                                        <form:input path="name" cssClass="form-control" disabled="true"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="text-danger">Are you sure to delete this image?</p>
                                     </div>
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col">
-                                                <button class="btn btn-block btn-primary" type="submit">Register</button>
+                                                <button class="btn btn-block btn-primary" type="submit">Delete</button>
                                             </div>
                                             <div class="col-auto">
                                                 <a class="btn btn-block btn-outline-info" href="<c:url value="/images"/>">
