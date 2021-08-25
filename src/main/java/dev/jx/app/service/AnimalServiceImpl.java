@@ -2,6 +2,7 @@ package dev.jx.app.service;
 
 import java.util.Collection;
 
+import dev.jx.app.entity.Area;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,36 +12,42 @@ import dev.jx.app.repository.AnimalRepository;
 @Service
 public class AnimalServiceImpl implements AnimalService {
 
-	@Autowired
-	private AnimalRepository animalRepository;
+    @Autowired
+    private AnimalRepository animalRepository;
 
-	@Override
-	@Transactional(readOnly = true)
-	public Collection<Animal> findAll() {
-		return this.animalRepository.findAll();
-	}
+    @Override
+    @Transactional(readOnly = true)
+    public Collection<Animal> findAll() {
+        return this.animalRepository.findAll();
+    }
 
-	@Override
-	@Transactional(readOnly = true)
-	public Animal findById(Integer id) {
-		return this.animalRepository.findById(id).orElse(null);
-	}
+    @Override
+    @Transactional(readOnly = true)
+    public Collection<Animal> findAllByAreasNotContaining(Area area) {
+        return this.animalRepository.findAllByAreasNotContaining(area);
+    }
 
-	@Override
-	@Transactional
-	public void insert(Animal animal) {
-		this.animalRepository.save(animal);
-	}
+    @Override
+    @Transactional(readOnly = true)
+    public Animal findById(Integer id) {
+        return this.animalRepository.findById(id).orElse(null);
+    }
 
-	@Override
-	@Transactional
-	public void update(Animal animal) {
-		this.animalRepository.save(animal);
-	}
+    @Override
+    @Transactional
+    public void insert(Animal animal) {
+        this.animalRepository.save(animal);
+    }
 
-	@Override
-	@Transactional
-	public void deleteById(Integer id) {
-		this.animalRepository.deleteById(id);
-	}
+    @Override
+    @Transactional
+    public void update(Animal animal) {
+        this.animalRepository.save(animal);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(Integer id) {
+        this.animalRepository.deleteById(id);
+    }
 }

@@ -11,7 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Dosage implements Serializable {
 
     @EmbeddedId
-    private DosageId id;
+    private DosageId id = new DosageId();
 
     @MapsId("medicalRecordId")
     @ManyToOne
@@ -34,6 +34,10 @@ public class Dosage implements Serializable {
     private LocalDate dosageDate;
 
     public Dosage() {
+    }
+
+    public Dosage(DosageId id) {
+        this.id = id;
     }
 
     public DosageId getId() {

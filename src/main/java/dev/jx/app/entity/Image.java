@@ -13,6 +13,9 @@ public class Image implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @OneToOne(mappedBy = "image")
+    private Pet pet;
+
     @Column(name = "img_name")
     private String name;
 
@@ -34,6 +37,14 @@ public class Image implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
     public String getName() {

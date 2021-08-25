@@ -43,7 +43,7 @@ public class PetController {
     @RequestMapping(value = "/pets/register", method = RequestMethod.GET)
     public String getRegister(Model model, Map<String, Object> map) {
         model.addAttribute("pet", new Pet());
-        map.put("images", this.imageService.findAll());
+        map.put("images", this.imageService.findAllByPetIsNull());
         map.put("animals", this.animalService.findAll());
 
         return "/pets/register";
@@ -58,7 +58,7 @@ public class PetController {
     @RequestMapping(value = "/pets/{id}/edit", method = RequestMethod.GET)
     public String getEdit(@PathVariable Integer id, Model model, Map<String, Object> map) {
         model.addAttribute("pet", this.petService.findById(id));
-        map.put("images", this.imageService.findAll());
+        map.put("images", this.imageService.findAllByPetIsNull());
         map.put("animals", this.animalService.findAll());
         
         return "/pets/edit";

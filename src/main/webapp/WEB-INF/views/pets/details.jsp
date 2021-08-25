@@ -24,12 +24,18 @@
             <main class="container py-4">
                 <div class="row">
                     <div class="col-3">
-                        <div class="h3">Modules</div>
-                        <div class="list-group">
-                            <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action active">Pets</a>
-                            <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
-                            <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
-                            <a href="<c:url value="/images"/>" class="list-group-item list-group-item-action">Images</a>
+                        <div class="sidebar">
+                            <div class="h3 text-muted">Modules</div>
+                            <div class="list-group">
+                                <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action active">Pets</a>
+                                <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
+                                <a href="<c:url value="/areas"/>" class="list-group-item list-group-item-action">Areas</a>
+                                <a href="<c:url value="/medical-records"/>" class="list-group-item list-group-item-action">Medical records</a>
+                                <a href="<c:url value="/vaccines"/>" class="list-group-item list-group-item-action">Vaccines</a>
+                                <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
+                                <a href="<c:url value="/adoptions"/>" class="list-group-item list-group-item-action">Adoptions</a>
+                                <a href="<c:url value="/images"/>" class="list-group-item list-group-item-action">Images</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-9">

@@ -22,6 +22,12 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     @Transactional(readOnly = true)
+    public Collection<Image> findAllByPetIsNull() {
+        return this.imageRepository.findAllByPetIsNull();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public Image findById(Integer id) {
         return this.imageRepository.findById(id).orElse(null);
     }

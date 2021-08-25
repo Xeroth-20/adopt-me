@@ -45,6 +45,10 @@ public class Owner implements Serializable {
     public Owner() {
     }
 
+    public String getFullname() {
+        return firstname + " " + lastname;
+    }
+
     public Integer getId() {
         return id;
     }

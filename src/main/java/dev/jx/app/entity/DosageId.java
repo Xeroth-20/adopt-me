@@ -14,6 +14,15 @@ public class DosageId implements Serializable {
     public DosageId() {
     }
 
+    public DosageId(Integer medicalRecordId) {
+        this.medicalRecordId = medicalRecordId;
+    }
+
+    public DosageId(Integer medicalRecordId, Integer vaccineId) {
+        this.medicalRecordId = medicalRecordId;
+        this.vaccineId = vaccineId;
+    }
+
     public Integer getMedicalRecordId() {
         return medicalRecordId;
     }
