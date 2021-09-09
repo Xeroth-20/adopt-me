@@ -11,9 +11,11 @@ public interface DosageService {
 
     Dosage findById(DosageId id);
 
-    void insert(Dosage area);
+    void insert(Dosage dosage);
 
-    void update(Dosage area);
+    void insertAll(Collection<Dosage> dosages);
+
+    void update(Dosage dosage);
 
     void deleteById(DosageId id);
 }

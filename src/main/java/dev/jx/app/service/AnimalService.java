@@ -11,6 +11,8 @@ public interface AnimalService {
 
 	Collection<Animal> findAllByAreasNotContaining(Area area);
 
+	Collection<Animal> findAllByAreasNotContainingAndIdNotIn(Area area, Collection<Integer> ids);
+
 	Animal findById(Integer id);
 
 	void insert(Animal animal);

@@ -1,5 +1,6 @@
 package dev.jx.app.entity;
 
+import java.util.Objects;
 import java.time.LocalDate;
 import java.io.Serializable;
 import javax.persistence.*;
@@ -8,7 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "dosages")
-public class Dosage implements Serializable {
+public class Dosage implements Serializable, Comparable<Dosage> {
 
     @EmbeddedId
     private DosageId id = new DosageId();
@@ -34,6 +35,11 @@ public class Dosage implements Serializable {
     private LocalDate dosageDate;
 
     public Dosage() {
+    }
+
+    @Override
+    public int compareTo(Dosage o) {
+        return vaccine.getId().compareTo(o.getVaccine().getId());
     }
 
     public Dosage(DosageId id) {
@@ -86,5 +92,18 @@ public class Dosage implements Serializable {
 
     public void setDosageDate(LocalDate dosageDate) {
         this.dosageDate = dosageDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dosage dosage = (Dosage) o;
+        return Objects.equals(id, dosage.id) && Objects.equals(method, dosage.method) && Objects.equals(quantity, dosage.quantity) && Objects.equals(dosageDate, dosage.dosageDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, method, quantity, dosageDate);
     }
 }

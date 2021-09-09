@@ -6,6 +6,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrap.min.css"/>"/>
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/icons/bootstrap-icons.css"/>"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/styles.css"/>"/>
         <title>Areas | Adopt me</title>
     </head>
@@ -30,8 +31,11 @@
                                 <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action">Pets</a>
                                 <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
                                 <a href="<c:url value="/areas"/>" class="list-group-item list-group-item-action active">Areas</a>
+                                <a href="<c:url value="/areas-animals"/>" class="list-group-item list-group-item-action">Areas
+                                    animals</a>
                                 <a href="<c:url value="/medical-records"/>" class="list-group-item list-group-item-action">Medical
                                     records</a>
+                                <a href="<c:url value="/dosages"/>" class="list-group-item list-group-item-action">Dosages</a>
                                 <a href="<c:url value="/vaccines"/>" class="list-group-item list-group-item-action">Vaccines</a>
                                 <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
                                 <a href="<c:url value="/adoptions"/>" class="list-group-item list-group-item-action">Adoptions</a>
@@ -72,15 +76,28 @@
                                                 <td>
                                                     <div class="form-row">
                                                         <div class="col-auto">
-                                                            <a class="btn btn-primary" href="<c:url value="/areas/${area.id}/allowed-animals"/>">Allowed
-                                                                animals
+                                                            <a class="btn btn-primary" href="<c:url value="/areas/${area.id}/allowed-animals"/>">
+                                                                <i class="bi-check-circle"></i>
+                                                                Animals
                                                             </a>
                                                         </div>
                                                         <div class="col-auto">
-                                                            <a class="btn btn-success" href="<c:url value="/areas/${area.id}/edit"/>">Edit</a>
+                                                            <a class="btn btn-info" href="<c:url value="/areas-animals/${area.id}/register"/>">
+                                                                <i class="bi-plus-lg"></i>
+                                                                Animal
+                                                            </a>
                                                         </div>
                                                         <div class="col-auto">
-                                                            <a class="btn btn-outline-danger" href="<c:url value="/areas/${area.id}/delete"/>">Delete</a>
+                                                            <a class="btn btn-success" href="<c:url value="/areas/${area.id}/edit"/>">
+                                                                <i class="bi-pencil"></i>
+                                                                Edit
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <a class="btn btn-outline-danger" href="<c:url value="/areas/${area.id}/delete"/>">
+                                                                <i class="bi-trash"></i>
+                                                                Delete
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </td>

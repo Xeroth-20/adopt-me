@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/bootstrap.min.css"/>"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/styles.css"/>"/>
-        <title>${pet.name} | Adopt Me</title>
+        <title>Pet ${pet.name} | Adopt Me</title>
     </head>
     <body>
         <div class="root">
@@ -30,7 +30,11 @@
                                 <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action active">Pets</a>
                                 <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
                                 <a href="<c:url value="/areas"/>" class="list-group-item list-group-item-action">Areas</a>
-                                <a href="<c:url value="/medical-records"/>" class="list-group-item list-group-item-action">Medical records</a>
+                                <a href="<c:url value="/areas-animals"/>" class="list-group-item list-group-item-action">Areas
+                                    animals</a>
+                                <a href="<c:url value="/medical-records"/>" class="list-group-item list-group-item-action">Medical
+                                    records</a>
+                                <a href="<c:url value="/dosages"/>" class="list-group-item list-group-item-action">Dosages</a>
                                 <a href="<c:url value="/vaccines"/>" class="list-group-item list-group-item-action">Vaccines</a>
                                 <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
                                 <a href="<c:url value="/adoptions"/>" class="list-group-item list-group-item-action">Adoptions</a>

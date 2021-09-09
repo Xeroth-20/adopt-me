@@ -16,7 +16,7 @@ public class Area implements Serializable {
 
     @ManyToMany
     @JoinTable(
-            name = "area_animals",
+            name = "areas_animals",
             joinColumns = @JoinColumn(name = "are_id", referencedColumnName = "are_id"),
             inverseJoinColumns = @JoinColumn(name = "ani_id", referencedColumnName = "ani_id")
     )

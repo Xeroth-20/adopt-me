@@ -1,15 +1,12 @@
 package dev.jx.app.entity;
 
-import java.util.Collection;
-import java.util.Set;
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.*;
 import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "animals")
-public class Animal implements Serializable {
+public class Animal implements Serializable, Comparable<Animal> {
 
     @Id
     @Column(name = "ani_id")
@@ -26,6 +23,11 @@ public class Animal implements Serializable {
     private String name;
 
     public Animal() {
+    }
+
+    @Override
+    public int compareTo(Animal o) {
+        return id.compareTo(o.getId());
     }
 
     public Integer getId() {
@@ -58,5 +60,18 @@ public class Animal implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Objects.equals(id, animal.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

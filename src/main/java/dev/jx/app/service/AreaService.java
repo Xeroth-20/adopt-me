@@ -8,6 +8,8 @@ public interface AreaService {
 
 	Collection<Area> findAll();
 
+	Collection<Object[]> findAllAreasAnimals();
+
 	Area findById(Integer id);
 
 	void insert(Area area);

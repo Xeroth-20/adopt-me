@@ -30,8 +30,11 @@
                                 <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action">Pets</a>
                                 <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
                                 <a href="<c:url value="/areas"/>" class="list-group-item list-group-item-action active">Areas</a>
+                                <a href="<c:url value="/areas-animals"/>" class="list-group-item list-group-item-action">Areas
+                                    animals</a>
                                 <a href="<c:url value="/medical-records"/>" class="list-group-item list-group-item-action">Medical
                                     records</a>
+                                <a href="<c:url value="/dosages"/>" class="list-group-item list-group-item-action">Dosages</a>
                                 <a href="<c:url value="/vaccines"/>" class="list-group-item list-group-item-action">Vaccines</a>
                                 <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
                                 <a href="<c:url value="/adoptions"/>" class="list-group-item list-group-item-action">Adoptions</a>
@@ -40,7 +43,16 @@
                         </div>
                     </div>
                     <div class="col-9">
-                        <h3>Area ${area.name}</h3>
+                        <header>
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Area ${area.name}</h3>
+                                </div>
+                                <div class="col-auto">
+                                    <a class="btn btn-outline-secondary" href="<c:url value="/animals"/>">Go back</a>
+                                </div>
+                            </div>
+                        </header>
                         <div class="row">
                             <div class="col-8">
                                 <div style="margin-bottom: .5rem">Allowed animals</div>

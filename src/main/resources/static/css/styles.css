@@ -2,6 +2,10 @@ main.container {
     animation: fadeIn 0.2s ease-in-out;
 }
 
+.table-container {
+    overflow-x: auto;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {

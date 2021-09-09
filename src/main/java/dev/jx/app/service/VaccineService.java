@@ -8,7 +8,9 @@ public interface VaccineService {
 
     Collection<Vaccine> findAll();
 
-    Collection<Vaccine> findAllByDosagesNotInMedicalRecordId(Integer id);
+    Collection<Vaccine> findAllNotIncludedInMedicalRecordId(Integer id);
+
+    Collection<Vaccine> findAllNotIncludedInMedicalRecordIdAndIdNotIn(Integer medicalRecordId, Collection<Integer> ids);
 
     Vaccine findById(Integer id);
 

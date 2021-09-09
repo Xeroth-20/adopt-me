@@ -30,8 +30,11 @@
                                 <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action">Pets</a>
                                 <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
                                 <a href="<c:url value="/areas"/>" class="list-group-item list-group-item-action">Areas</a>
+                                <a href="<c:url value="/areas-animals"/>" class="list-group-item list-group-item-action">Areas
+                                    animals</a>
                                 <a href="<c:url value="/medical-records"/>" class="list-group-item list-group-item-action active">Medical
                                     records</a>
+                                <a href="<c:url value="/dosages"/>" class="list-group-item list-group-item-action">Dosages</a>
                                 <a href="<c:url value="/vaccines"/>" class="list-group-item list-group-item-action">Vaccines</a>
                                 <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
                                 <a href="<c:url value="/adoptions"/>" class="list-group-item list-group-item-action">Adoptions</a>
@@ -57,7 +60,7 @@
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Pet</th>
-                                    <th scope="col">Creation Date</th>
+                                    <th scope="col">Creation date</th>
                                     <th scope="col">Options</th>
                                 </tr>
                             </thead>
@@ -73,6 +76,9 @@
                                                     <div class="form-row">
                                                         <div class="col-auto">
                                                             <a class="btn btn-primary" href="<c:url value="/medical-records/${medicalRecord.id}/dosages"/>">Dosages</a>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <a class="btn btn-info" href="<c:url value="/dosages/${medicalRecord.id}/register"/>">Add dosage</a>
                                                         </div>
                                                         <div class="col-auto">
                                                             <a class="btn btn-success" href="<c:url value="/medical-records/${medicalRecord.id}/edit"/>">Edit</a>

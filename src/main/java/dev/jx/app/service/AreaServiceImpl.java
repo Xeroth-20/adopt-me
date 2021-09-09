@@ -22,6 +22,12 @@ public class AreaServiceImpl implements AreaService {
 
 	@Override
 	@Transactional(readOnly = true)
+	public Collection<Object[]> findAllAreasAnimals() {
+		return this.areaRepository.findAllAreasAnimals();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
 	public Area findById(Integer id) {
 		return this.areaRepository.findById(id).orElse(null);
 	}

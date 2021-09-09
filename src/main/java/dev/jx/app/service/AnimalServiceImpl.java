@@ -1,6 +1,7 @@
 package dev.jx.app.service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import dev.jx.app.entity.Area;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,12 @@ public class AnimalServiceImpl implements AnimalService {
     @Transactional(readOnly = true)
     public Collection<Animal> findAllByAreasNotContaining(Area area) {
         return this.animalRepository.findAllByAreasNotContaining(area);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Collection<Animal> findAllByAreasNotContainingAndIdNotIn(Area area, Collection<Integer> ids) {
+        return this.animalRepository.findAllByAreasNotContainingAndIdNotIn(area, ids);
     }
 
     @Override

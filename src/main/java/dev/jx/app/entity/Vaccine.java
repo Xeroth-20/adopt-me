@@ -1,5 +1,6 @@
 package dev.jx.app.entity;
 
+import java.util.Objects;
 import java.util.Set;
 import java.util.HashSet;
 import java.io.Serializable;
@@ -7,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "vaccines")
-public class Vaccine implements Serializable {
+public class Vaccine implements Serializable, Comparable<Vaccine> {
 
     @Id
     @Column(name = "vac_id")
@@ -24,6 +25,11 @@ public class Vaccine implements Serializable {
     private String description;
 
     public Vaccine() {
+    }
+
+    @Override
+    public int compareTo(Vaccine o) {
+        return id.compareTo(o.getId());
     }
 
     public Integer getId() {
@@ -56,5 +62,18 @@ public class Vaccine implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vaccine vaccine = (Vaccine) o;
+        return Objects.equals(id, vaccine.id) && Objects.equals(name, vaccine.name) && Objects.equals(description, vaccine.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description);
     }
 }

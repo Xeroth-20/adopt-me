@@ -21,8 +21,15 @@ public class VaccineServiceImpl implements VaccineService {
     }
 
     @Override
-    public Collection<Vaccine> findAllByDosagesNotInMedicalRecordId(Integer id) {
-        return this.vaccineRepository.findAllNotIncludedInMedicalRecord(id);
+    @Transactional(readOnly = true)
+    public Collection<Vaccine> findAllNotIncludedInMedicalRecordId(Integer id) {
+        return this.vaccineRepository.findAllNotIncludedInMedicalRecordId(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Collection<Vaccine> findAllNotIncludedInMedicalRecordIdAndIdNotIn(Integer medicalRecordId, Collection<Integer> ids) {
+        return this.vaccineRepository.findAllNotIncludedInMedicalRecordIdAndIdNotIn(medicalRecordId, ids);
     }
 
     @Override

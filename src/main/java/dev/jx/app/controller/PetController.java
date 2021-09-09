@@ -60,7 +60,7 @@ public class PetController {
         model.addAttribute("pet", this.petService.findById(id));
         map.put("images", this.imageService.findAllByPetIsNull());
         map.put("animals", this.animalService.findAll());
-        
+
         return "/pets/edit";
     }
 

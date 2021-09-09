@@ -31,8 +31,11 @@
                                 <a href="<c:url value="/pets"/>" class="list-group-item list-group-item-action">Pets</a>
                                 <a href="<c:url value="/animals"/>" class="list-group-item list-group-item-action">Animals</a>
                                 <a href="<c:url value="/areas"/>" class="list-group-item list-group-item-action">Areas</a>
+                                <a href="<c:url value="/areas-animals"/>" class="list-group-item list-group-item-action">Areas
+                                    animals</a>
                                 <a href="<c:url value="/medical-records"/>" class="list-group-item list-group-item-action active">Medical
                                     records</a>
+                                <a href="<c:url value="/dosages"/>" class="list-group-item list-group-item-action">Dosages</a>
                                 <a href="<c:url value="/vaccines"/>" class="list-group-item list-group-item-action">Vaccines</a>
                                 <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
                                 <a href="<c:url value="/adoptions"/>" class="list-group-item list-group-item-action">Adoptions</a>
@@ -41,7 +44,7 @@
                         </div>
                     </div>
                     <div class="col-9">
-                        <h3>${medicalRecord.pet.name}'s Medical Record</h3>
+                        <h3>${medicalRecord.pet.name}'s medical record</h3>
                         <div class="row">
                             <div class="col-8">
                                 <div style="margin-bottom: .5rem">Dosages</div>
@@ -84,11 +87,11 @@
                                 </table>
                             </div>
                             <div class="col-4">
-                                <c:set var="dosageRegisterUri">
+                                <c:set var="dosagesRegisterUri">
                                     <c:url value="/dosages/register"/>
                                 </c:set>
                                 <form:form modelAttribute="dosage"
-                                           action="${dosageRegisterUri}"
+                                           action="${dosagesRegisterUri}"
                                            method="post">
                                     <div class="form-group d-none">
                                         <form:label path="medicalRecord.id">Medical record</form:label>

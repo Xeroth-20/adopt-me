@@ -1,5 +1,6 @@
 package dev.jx.app.repository;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,8 +11,14 @@ public interface VaccineRepository extends JpaRepository<Vaccine, Integer> {
 
     @Query(
             value = "SELECT v FROM Vaccine v " +
-                    "LEFT JOIN FETCH v.dosages d " +
-                    "WHERE d.id.medicalRecordId IS NULL OR d.id.medicalRecordId <> ?1"
+                    "WHERE ?1 NOT IN (SELECT d.medicalRecord.id FROM Dosage d WHERE d.id.vaccineId = v.id)"
     )
-    List<Vaccine> findAllNotIncludedInMedicalRecord(Integer id);
+    List<Vaccine> findAllNotIncludedInMedicalRecordId(Integer id);
+
+    @Query(
+            value = "SELECT v FROM Vaccine v " +
+                    "WHERE ?1 NOT IN (SELECT d.medicalRecord.id FROM Dosage d WHERE d.id.vaccineId = v.id) " +
+                    "AND v.id NOT IN ?2"
+    )
+    List<Vaccine> findAllNotIncludedInMedicalRecordIdAndIdNotIn(Integer medicalRecordId, Collection<Integer> ids);
 }

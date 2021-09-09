@@ -35,6 +35,12 @@ public class DosageServiceImpl implements DosageService {
 
     @Override
     @Transactional
+    public void insertAll(Collection<Dosage> dosages) {
+        this.dosageRepository.saveAll(dosages);
+    }
+
+    @Override
+    @Transactional
     public void update(Dosage dosage) {
         this.dosageRepository.save(dosage);
     }

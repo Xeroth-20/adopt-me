@@ -2,7 +2,6 @@ package dev.jx.app.controller;
 
 import java.util.Map;
 
-import dev.jx.app.entity.DosageId;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -83,7 +82,7 @@ public class MedicalRecordController {
         dosage.setMedicalRecord(medicalRecord);
         model.addAttribute("dosage", dosage);
         map.put("medicalRecord", medicalRecord);
-        map.put("vaccines", this.vaccineService.findAllByDosagesNotInMedicalRecordId(medicalRecord.getId()));
+        map.put("vaccines", this.vaccineService.findAllNotIncludedInMedicalRecordId(medicalRecord.getId()));
 
         return "/medical-records/dosages";
     }
