@@ -24,6 +24,12 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     @Transactional(readOnly = true)
+    public Collection<Animal> findAllByAreasContaining(Area area) {
+        return this.animalRepository.findAllByAreasContaining(area);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public Collection<Animal> findAllByAreasNotContaining(Area area) {
         return this.animalRepository.findAllByAreasNotContaining(area);
     }

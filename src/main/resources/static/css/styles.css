@@ -1,9 +1,98 @@
-main.container {
+body {
+    min-height: 100vh;
+    height: 100%;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    height: 100%;
+}
+
+.root-header {
+    flex: 0 0 auto;
+}
+
+.root-body {
+    flex: 1 0 auto;
+}
+
+.root-footer {
+    flex: 0 0 auto;
+}
+
+main.container, .login {
     animation: fadeIn 0.2s ease-in-out;
 }
 
 .table-container {
     overflow-x: auto;
+}
+
+.table-header, .table-toolbar {
+    border: 1px solid #dee2e6 !important;
+    border-bottom: 0 !important;
+
+    padding: 0.75rem;
+}
+
+.table-header-icon {
+    display: inline-block;
+    vertical-align: top;
+
+    width: 33px;
+    height: 33px;
+}
+
+.table-header-title {
+    display: inline-block;
+
+    margin-bottom: 0;
+}
+
+.table-options {
+    margin-bottom: 0;
+}
+
+.table-filters {
+    margin-top: 0.75rem;
+}
+
+.table-filters .form-inline label {
+    margin-right: 0.5rem;
+}
+
+.icon-dd-container {
+    display: inline-block;
+    width: 20px;
+}
+
+.login {
+    background-color: #000;
+}
+
+.login::before {
+    content: "";
+    display: block;
+    background-image: url("/image/homepage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.84;
+    position: absolute;
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+.login .card {
+    min-width: 350px;
+    max-width: 400px;
+}
+
+.login .login-img {
+    max-width: 120px;
 }
 
 /* Animations */

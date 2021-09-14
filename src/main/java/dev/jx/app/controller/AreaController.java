@@ -1,5 +1,6 @@
 package dev.jx.app.controller;
 
+import java.util.HashSet;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -50,6 +51,7 @@ public class AreaController {
 
     @RequestMapping(value = "/areas/{id}/edit", method = RequestMethod.POST)
     public String postEdit(Area area) {
+        area.setAnimals(new HashSet<>(this.animalService.findAllByAreasContaining(area)));
         this.areaService.update(area);
         return "redirect:/areas";
     }

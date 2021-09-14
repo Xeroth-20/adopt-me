@@ -9,6 +9,8 @@ import dev.jx.app.entity.Area;
 
 public interface AnimalRepository extends JpaRepository<Animal, Integer> {
 
+    List<Animal> findAllByAreasContaining(Area area);
+
     List<Animal> findAllByAreasNotContaining(Area area);
 
     List<Animal> findAllByAreasNotContainingAndIdNotIn(Area area, Collection<Integer> ids);

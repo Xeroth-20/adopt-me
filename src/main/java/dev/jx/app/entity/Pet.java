@@ -3,6 +3,9 @@ package dev.jx.app.entity;
 import java.time.LocalDate;
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PositiveOrZero;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -27,9 +30,12 @@ public class Pet implements Serializable {
     private Adoption adoption;
 
     @Column(name = "pet_name", nullable = false, unique = true)
+    @NotBlank(message = "Name must not be blank")
     private String name;
 
     @Column(name = "pet_age")
+    @NotNull(message = "This field is required")
+    @PositiveOrZero(message = "Age must be a positive integer")
     private Integer age;
 
     @Column(name = "pet_available_adoption")

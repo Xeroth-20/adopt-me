@@ -8,4 +8,6 @@ import dev.jx.app.entity.Image;
 public interface ImageRepository extends JpaRepository<Image, Integer> {
 
     List<Image> findAllByPetIsNull();
+
+    List<Image> findAllByPetIsNullOrPet_Id(Integer id);
 }

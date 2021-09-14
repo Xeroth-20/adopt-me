@@ -9,6 +9,8 @@ public interface AnimalService {
 
 	Collection<Animal> findAll();
 
+	Collection<Animal> findAllByAreasContaining(Area area);
+
 	Collection<Animal> findAllByAreasNotContaining(Area area);
 
 	Collection<Animal> findAllByAreasNotContainingAndIdNotIn(Area area, Collection<Integer> ids);

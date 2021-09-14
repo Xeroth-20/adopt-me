@@ -10,6 +10,8 @@ public interface ImageService {
 
     Collection<Image> findAllByPetIsNull();
 
+    Collection<Image> findAllByPetIsNullOrPet_Id(Integer id);;
+
     Image findById(Integer id);
 
     void insert(Image image);
