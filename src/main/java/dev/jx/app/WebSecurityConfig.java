@@ -27,28 +27,31 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/pets").authenticated()
+                .antMatchers(
+                        "/",
+                        "/pets",
+                        "/animals",
+                        "/areas",
+                        "/areas-animals",
+                        "/medical-records",
+                        "/dosages",
+                        "/vaccines",
+                        "/owners",
+                        "/adoptions",
+                        "/images"
+                ).authenticated()
                 .regexMatchers("/pets/[0-9]+$").authenticated()
                 .antMatchers("/pets/**").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/animals").authenticated()
                 .antMatchers("/animals/**").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/areas").authenticated()
                 .antMatchers("/areas/**").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/areas-animals").authenticated()
                 .regexMatchers("/areas-animals/[0-9]+$").authenticated()
                 .antMatchers("/area-animals/**", "/areas-animals/**").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/medical-records").authenticated()
                 .antMatchers("/medical-records/**").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/dosages").authenticated()
                 .regexMatchers("/dosages/[0-9]+$").authenticated()
                 .antMatchers("/dosages/**").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/vaccines").authenticated()
                 .antMatchers("/vaccines/**").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/owners").authenticated()
                 .antMatchers("/owners/**").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/adoptions").authenticated()
                 .antMatchers("/adoptions/**").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/images").authenticated()
                 .antMatchers("/images/**").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers("/users/**").hasAnyAuthority("ADMIN")
                 .anyRequest().permitAll()
