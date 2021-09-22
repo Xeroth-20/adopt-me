@@ -59,8 +59,8 @@
                                     <a href="<c:url value="/medical-records"/>" class="list-group-item list-group-item-action">Medical
                                         records</a>
                                     <a href="<c:url value="/dosages"/>" class="list-group-item list-group-item-action">Dosages</a>
-                                    <a href="<c:url value="/vaccines"/>" class="list-group-item list-group-item-action">Vaccines</a>
-                                    <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action active">Owners</a>
+                                    <a href="<c:url value="/vaccines"/>" class="list-group-item list-group-item-action active">Vaccines</a>
+                                    <a href="<c:url value="/owners"/>" class="list-group-item list-group-item-action">Owners</a>
                                     <a href="<c:url value="/adoptions"/>" class="list-group-item list-group-item-action">Adoptions</a>
                                     <a href="<c:url value="/images"/>" class="list-group-item list-group-item-action">Images</a>
                                     <a href="<c:url value="/users"/>" class="list-group-item list-group-item-action">Users</a>
