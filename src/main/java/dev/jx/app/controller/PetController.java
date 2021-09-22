@@ -17,7 +17,7 @@ import dev.jx.app.entity.Pet;
 import dev.jx.app.service.PetService;
 import dev.jx.app.service.ImageService;
 import dev.jx.app.service.AnimalService;
-import dev.jx.app.validation.PetValidator;
+import dev.jx.app.util.validator.PetValidator;
 
 @Controller
 public class PetController {

@@ -20,7 +20,7 @@ import dev.jx.app.entity.User;
 import dev.jx.app.service.UserService;
 import dev.jx.app.service.RoleService;
 import dev.jx.app.dto.UserDTO;
-import dev.jx.app.validation.UserValidator;
+import dev.jx.app.util.validator.UserValidator;
 
 @Controller
 public class UserController {

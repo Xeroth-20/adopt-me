@@ -161,11 +161,7 @@
                 </main>
             </div>
             <div class="root-footer">
-                <footer class="bg-dark">
-                    <p class="text-center text-light py-3 mb-0">
-                        Adopt Me &copy;2021
-                    </p>
-                </footer>
+                <%@ include file="/WEB-INF/views/shared/footer.jsp" %>
             </div>
         </div>
         <script type="application/javascript" src="<c:url value="/js/jquery.min.js"/>"></script>

@@ -95,6 +95,15 @@ main.container, .login {
     max-width: 120px;
 }
 
+.footer-title {
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.footer-p {
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 14px;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {

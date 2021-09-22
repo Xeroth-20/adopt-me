@@ -1,4 +1,4 @@
-package dev.jx.app.validation;
+package dev.jx.app.util.validator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.ValidationUtils;

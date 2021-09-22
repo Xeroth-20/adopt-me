@@ -105,6 +105,11 @@
                                                     <td>
                                                         <div class="form-row">
                                                             <div class="col-auto">
+                                                                <a class="btn btn-primary" href="<c:url value="/owners/${owner.id}/export-pdf"/>" target="_blank">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-auto">
                                                                 <a class="btn btn-success" href="<c:url value="/owners/${owner.id}/edit"/>">
                                                                     <i class="fa fa-pen"></i>
                                                                 </a>
@@ -132,11 +137,7 @@
                 </main>
             </div>
             <div class="root-footer">
-                <footer class="bg-dark">
-                    <p class="text-center text-light py-3 mb-0">
-                        Adopt Me &copy;2021
-                    </p>
-                </footer>
+                <%@ include file="/WEB-INF/views/shared/footer.jsp" %>
             </div>
         </div>
     </body>
